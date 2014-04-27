@@ -1,0 +1,25 @@
+<%= form_for(@pokemon_entry) do |f| %>
+  <% if @pokemon_entry.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@pokemon_entry.errors.count, "error") %> prohibited this pokemon_entry from being saved:</h2>
+
+      <ul>
+      <% @pokemon_entry.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :pokedexNumber %><br>
+    <%= f.number_field :pokedexNumber %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
