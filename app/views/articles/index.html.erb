@@ -1,0 +1,23 @@
+<section>
+
+    <header class="articles-index-header">
+        <h1 class="pull-left">Articles</h1>
+        <div class="pull-right create-new-article"><%= link_to 'New article', new_article_path, {:class => 'btn btn-default btn-lg'} %></div>
+    </header>
+
+    <div class="list-group">
+        <% @articles.each do |article| %>
+        <a href="<%= article_path(article) %>" class="list-group-item clearfix" id="<%= article.id %>">
+            <div class="pull-left">
+                <h4 class="list-group-item-heading"><%= article.title %></h4>
+                <p class="list-group-item-text"><%= article.text %></p>
+            </div>
+            <div class="pull-right">
+                <div type="button" class="btn btn-info btn-edit" data-link="<%= edit_article_path(article) %>" onclick="location.pathname = this.getAttribute('data-link')"><span class="glyphicon glyphicon-edit"></span></div>
+                <div type="button" class="btn btn-info btn-remove"><span class="glyphicon glyphicon-remove"></span></div>
+            </div>
+        </a>
+        <% end %>
+    </div>
+
+</section>

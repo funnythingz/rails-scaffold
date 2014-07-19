@@ -1,0 +1,8 @@
+.create-new-article {
+  margin-top: 20px;
+}
+
+.articles-index-header {
+  margin-bottom: 10px;
+  @include legacy-pie-clearfix;
+}

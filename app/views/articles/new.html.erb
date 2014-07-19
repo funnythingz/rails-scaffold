@@ -1,0 +1,32 @@
+<section>
+
+    <h1>new Article</h1>
+
+    <%= form_for :article, url: articles_path do |f| %>
+
+        <% if @article.errors.any? %>
+            <p class="text-warning"><%= pluralize(@article.errors.count, 'error') %></p>
+            <ul class="text-warning">
+                <% @article.errors.full_messages.each do |msg| %>
+                    <li><%= msg %></li>
+                <% end %>
+            </ul>
+        <% end %>
+
+        <div class="form-group">
+            <%= f.label :title %>
+            <%= f.text_field :title, :class => 'form-control' %>
+        </div>
+
+        <div class="form-group">
+            <%= f.label :text %>
+            <%= f.text_area :text, :class => 'form-control' %>
+        </div>
+
+        <div class="clearfix">
+            <div class="pull-left"><a href="<%= articles_path %>" class="btn btn-default">Back</a></div>
+            <div class="pull-right"><%= f.submit 'Post', {:class => 'btn btn-default'} %></div>
+        </div>
+    <% end %>
+
+</section>

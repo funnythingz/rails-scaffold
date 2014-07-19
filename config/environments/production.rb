@@ -23,8 +23,9 @@ Rails.application.configure do
   config.serve_static_assets = false
 
   # Compress JavaScripts and CSS.
+  config.assets.compress = true
   config.assets.js_compressor = :uglifier
-  # config.assets.css_compressor = :sass
+  config.assets.css_compressor = :sass
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
   config.assets.compile = false
@@ -80,4 +81,10 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  # Sass
+  config.sass.preferred_syntax = :scss
+  config.sass.line_comments = false
+  config.sass.cache = false
+
 end
